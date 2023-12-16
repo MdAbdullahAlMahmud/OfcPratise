@@ -54,10 +54,18 @@ class _MyHomePageState extends State<MyHomePage> {
                     SliverList(
                         delegate: SliverChildBuilderDelegate((context, index) {
                       return Item(
+                        content: "One ${++index}",
+                        color: Colors.deepPurpleAccent,
+                      );
+                    }, childCount: 40)),
+                     SliverList(
+                        delegate: SliverChildBuilderDelegate((context, index) {
+                      return Item(
                         content: "Two ${++index}",
                         color: Colors.indigo,
                       );
                     }, childCount: 40)),
+
 
 
                   ],
@@ -65,17 +73,42 @@ class _MyHomePageState extends State<MyHomePage> {
             Row(
               children: [
                 Expanded(
-                    child: ElevatedButton(
-                        onPressed: () {},
-                        child: Text(
-                          "Cancel",
-                        ))),
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 8.0,vertical: 4),
+                      child: ElevatedButton(
+                          onPressed: () {},
+                          style: ButtonStyle(
+                              foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
+                              backgroundColor: MaterialStateProperty.all<Color>(Colors.red),
+                              shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                                  RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(8.0),
+                                  )
+                              )
+                          ),
+                          child: Text(
+                            "Cancel",
+                          )),
+                    )),
                 Expanded(
-                    child: ElevatedButton(
-                        onPressed: () {},
-                        child: Text(
-                          "Next",
-                        ))),
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 8.0,vertical: 4),
+                      child: ElevatedButton(
+                          onPressed: () {},
+
+                          style: ButtonStyle(
+                              foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
+                              backgroundColor: MaterialStateProperty.all<Color>(Colors.green),
+                              shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                                  RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(8.0),
+                                  )
+                              )
+                          ),
+                          child: Text(
+                            "Next",
+                          )),
+                    )),
               ],
             )
           ],
